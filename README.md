@@ -1,6 +1,7 @@
 ### 配置
 
-#### 我的目录结构：
+## nodejs一般是当成一条命令执行的，当用户断开session，nodejs也就停止了运行。如何让nodejs持续在后台运行呢？
+##### 使用forever让node.js持久运行
 最简单粗暴的方法是使用Linux本身后台执行的特性
 使用&符号后台执行，并利用nohup命令实现进程禁止挂起
 
@@ -55,7 +56,7 @@ NODE_ENV=production forever start -l ~/.forever/forever.log -e ~/.forever/err.lo
 來源：简书
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
-
+#### 我的目录结构：
 ```
 ├── app.js   # Express Server
 ├── bin
