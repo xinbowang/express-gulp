@@ -15,38 +15,38 @@ forever restartall  #重启所有应用
 #输出日志和错误
 forever start -l forever.log -o out.log -e err.log app.js   
 
-# 指定forever信息输出文件，当然，默认它会放到~/.forever/forever.log
+#### 指定forever信息输出文件，当然，默认它会放到~/.forever/forever.log
 forever start -l forever.log app.js  
 
-# 指定app.js中的日志信息和错误日志输出文件，  
-# -o 就是console.log输出的信息，-e 就是console.error输出的信息
+#### 指定app.js中的日志信息和错误日志输出文件，  
+#### -o 就是console.log输出的信息，-e 就是console.error输出的信息
 forever start -o out.log -e err.log app.js 
 
-# 追加日志，forever默认是不能覆盖上次的启动日志，  
-# 所以如果第二次启动不加-a，则会不让运行  
+#### 追加日志，forever默认是不能覆盖上次的启动日志，  
+#### 所以如果第二次启动不加-a，则会不让运行  
 forever start -l forever.log -a app.js
 
-# 监听当前文件夹下的所有文件改动（不太建议这样）  
+#### 监听当前文件夹下的所有文件改动（不太建议这样）  
 forever start -w app.js  
 
-# 显示所有运行的服务 
+#### 显示所有运行的服务 
 forever list  
 
-######停止操作
+## 停止操作
 
-# 停止所有运行的node App  
+#### 停止所有运行的node App  
 forever stopall  
   
-# 停止其中一个node App  
+#### 停止其中一个node App  
 forever stop app.js  
 
-# 当然还可以这样  
-# forever list 找到对应的id，然后：  
+#### 当然还可以这样  
+#### forever list 找到对应的id，然后：  
 forever stop [id]
 
-# 开发环境下  
+#### 开发环境下  
 NODE_ENV=development forever start -l forever.log -e err.log -a app.js  
-# 线上环境下  
+#### 线上环境下  
 NODE_ENV=production forever start -l ~/.forever/forever.log -e ~/.forever/err.log -w -a app.js
 #上面加上NODE_ENV为了让app.js辨认当前是什么环境用的
 
