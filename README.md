@@ -1,7 +1,7 @@
 ### 配置
 
 ## nodejs一般是当成一条命令执行的，当用户断开session，nodejs也就停止了运行。如何让nodejs持续在后台运行呢？
-##### 使用forever让node.js持久运行
+## 使用forever让node.js持久运行； 或者 pm2 来做
 最简单粗暴的方法是使用Linux本身后台执行的特性
 使用&符号后台执行，并利用nohup命令实现进程禁止挂起
 
